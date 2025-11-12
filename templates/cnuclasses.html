@@ -1,0 +1,103 @@
+{% extends 'base/base.html' %}
+
+{% block title %}{% block header %}CNU Schedule of Classes{% endblock %}{% endblock %}
+
+{% block head %}
+<link href="/static/css/cnuclasses.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>
+                <p>Course Request Number</p>
+                <input type="text" id="crnInput" onkeyup="tableFilter()" placeholder="Filter">
+            </th>
+            <th>
+                <p>Course</p>
+                <input type="text" id="courseInput" onkeyup="tableFilter()" placeholder="Filter">
+            </th>
+            <th>
+                <p>Course Name</p>
+                <input type="text" id="nameInput" onkeyup="tableFilter()" placeholder="Filter">
+            </th>
+            <th>More Info</th>
+            <th>Textbooks</th>
+            <th>Credit Hours</th>
+            <th>
+                <p>LLC</p>
+                <input type="text" id="llcInput" onkeyup="tableFilter()" placeholder="Filter">
+            </th>
+            <th>Type</th>
+            <th>Days</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Instructor</th>
+            <th>Seats Available</th>
+            <th>
+                <p>Status</p>
+                <input type="text" id="statusInput" onkeyup="tableFilter()" placeholder="Filter">
+            </th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+        {% for row in classes %}
+        <tr>
+            {% set cols = row.find_all("td") %}
+            <td>{{ safe_strip(cols[0].font.string) }}</td>
+            <td>{{ safe_strip(cols[1].font.a.string) }}</td>
+            <td>{{ safe_strip(cols[3].font.a.string) }}</td>
+            <td><a href="{{ 'https://navigator.cnu.edu/StudentScheduleofClasses/' + safe_strip(cols[1].font.a['href']) }}">More Info</a></td>
+            <td><a href="{{ safe_strip(cols[3].font.a['href']) }}">Textbooks</a></td>
+            <td>{{ safe_strip(cols[4].font.string) }}</td>
+            <td>{{ safe_strip(cols[6].font.span.string) }}</td>
+            <td>{{ safe_strip(cols[7].font.string) }}</td>
+            <td>{{ safe_strip(cols[8].font.string) }}</td>
+            <td>{{ safe_strip(cols[9].font.string) }}</td>
+            <td>{{ safe_strip(cols[10].font.string) }}</td>
+            <td>{{ safe_strip(cols[11].font.string) }}</td>
+            <td>{{ safe_strip(cols[12].font.span.string) }}</td>
+            <td>{{ safe_strip(cols[13].font.span.string) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    function tableFilter() {
+        // Getting filter values
+        let crnFilter = document.getElementById("crnInput").value.toLowerCase();
+        let courseFilter = document.getElementById("courseInput").value.toLowerCase();
+        let nameFilter = document.getElementById("nameInput").value.toLowerCase();
+        let llcFilter = document.getElementById("llcInput").value.toLowerCase();
+        let statusFilter = document.getElementById("statusInput").value.toLowerCase();
+
+        // Getting the table positions
+        let tbody = document.getElementById("tbody");
+        let trs = tbody.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (let i = 0; i < trs.length; i++) {
+            const tdCRN = trs[i].children[0];
+            const tdCourse = trs[i].children[1];
+            const tdCourseName = trs[i].children[2];
+            const tdLLC = trs[i].children[6];
+            const tdStatus = trs[i].children[13];
+
+            // Verifying the inputs
+            if (tdCRN && tdCourse && tdCourseName && tdLLC && tdStatus) {
+                let hide = tdCRN.textContent.toLowerCase().indexOf(crnFilter) > -1 && 
+                    tdCourse.textContent.toLowerCase().indexOf(courseFilter) > -1 && 
+                    tdCourseName.textContent.toLowerCase().indexOf(nameFilter) > -1 && 
+                    tdLLC.textContent.toLowerCase().indexOf(llcFilter) > -1 && 
+                    tdStatus.textContent.toLowerCase().indexOf(statusFilter) > -1;
+                // Hiding the element
+                trs[i].style.display = hide ? "" : "none";
+            }
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Turbo's Webpage{% endblock %}
+
+{% block head %}
+<link href="/static/css/index.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<!-- Pictures -->
+<img id="center-img" src="/static/img/me.jpg">
+<svg id="name" viewBox="0 0 380 380">
+    <path id="curve" style="fill: none; stroke: none; stroke-width: 3px;" d="M 40 190 A 1 1 180 0 1 340 190"></path>
+    <text width="300">
+        <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">Jackson Campbell</textPath>
+    </text>
+</svg>
+<img id="scouts" src="/static/img/scouts.jpg">
+<img id="bluecheese" src="/static/img/bluecheese.jpg">
+<img id="cit" src="/static/img/cit.png">
+<img id="cfa" src="/static/img/cfa.jpg">
+{% endblock %}

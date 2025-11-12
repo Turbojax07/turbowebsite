@@ -1,0 +1,11 @@
+#event1 #pic1 {
+    width: 40%;
+}
+
+#event1 #pic2, #event3 #pic1, #event3 #pic2, #event3 #pic3, #event4 #pic1, #event4 #pic2, #event4 #pic3, #event5 #pic1 {
+    width: 30%;
+}
+
+#event2 #pic1, #event2 #pic2 {
+    width: 20%;
+}

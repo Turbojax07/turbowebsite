@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/static/css/navbar.css" rel="stylesheet">
+
+    <script src="/static/js/navbar.js" defer></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Div -->
+    <div id="main">
+        <!-- Header -->
+        <h1 id="header">{% block header %}{% endblock %}</h1>
+
+        <!-- Content -->
+        <div id="content">{% block content %}{% endblock %}</div>
+    </div>
+</body>
+</html>

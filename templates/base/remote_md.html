@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+
+{% block head %}
+<!-- Markdown Interpreter -->
+<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+<script type="module" src="/static/js/mdcode.js"></script>
+{% endblock %}
+
+{% block content %}
+<zero-md src="{% block mdurl %}{% endblock %}"></zero-md>
+{% endblock %}

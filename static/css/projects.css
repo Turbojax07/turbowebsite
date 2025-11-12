@@ -1,0 +1,37 @@
+/* Project Grid */
+#content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: border 0.3s, box-shadow 0.3s;
+    position: relative;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    overflow-wrap: break-word;
+    /* text-overflow: ellipsis; */
+}
+
+.project-card:hover {
+    border-color: #5A85F2;
+    box-shadow: 0 4px 12px rgba(65, 105, 225, 0.15);
+}
+
+.project-card > a {
+    /* display: inline-block;
+    align-self: flex-end; */
+    position: absolute;
+    left: 16.5%;
+    bottom: 2%;
+}

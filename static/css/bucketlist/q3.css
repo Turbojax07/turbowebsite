@@ -1,0 +1,19 @@
+#event11 #pic1 {
+    width: 25%;
+}
+
+#event12 #pic1, #event11 #pic2, #event12 #pic2, #event12 #pic3, #event13 #pic2, #event14 #pic1, #event14 #pic2, #event14 #pic3, #event15 #pic1, #event15 #pic2 {
+    width: 30%;
+}
+
+#event13 #pic1 {
+    width: 60%;
+}
+
+#event13 #pic2 {
+    float: right;
+}
+
+#event15 #pic2 {
+    float: right;
+}

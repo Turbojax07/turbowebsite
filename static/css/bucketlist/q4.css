@@ -1,0 +1,55 @@
+#event16 img {
+    width: 30%;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+#event17 img {
+    width: 25%;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+#event18 #pic1 {
+    width: 30%;
+    float: right;
+}
+
+#event18 #pic2 {
+    width: 30%;
+}
+
+#event19 #pic1 {
+    width: 40%;
+    padding-bottom: 15px;
+}
+
+#event19 #pic2 {
+    width: 22%;
+    float: left;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+#event19 #pic3 {
+    float: right;
+    width: 22%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
+#event20 {
+    text-align: center;
+    display: inline-block;
+}
+
+#event20 #pic1 {
+    width: 60%;
+}
+
+#event20 #pic2 {
+    width: 30%;
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 40px;
+}

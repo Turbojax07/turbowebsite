@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Index of {{ current_path }}{% endblock %}
+{% block header %}Files{% endblock %}
+
+{% block head %}
+<style>
+pre {
+    background-color: #E9EBEE;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: fit-content;
+    margin: 0 auto;
+    font-size: 1.2em;
+    display: block;
+    font-family: monospace;
+    unicode-bidi: isolate;
+    white-space: pre;
+    margin-block: 1em 1em;
+    margin-inline: 0px;
+}
+
+pre a {
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Index of /{{current_path}}</h1>
+
+<pre>
+{% if current_path %}<a href="https://turbojax.org/files/{{current_path}}../">../</a>
+
+{% endif %}{% for label in labels %}{{label | safe}}
+
+{%endfor%}
+</pre>
+{% endblock %}
