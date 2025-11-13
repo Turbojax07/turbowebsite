@@ -152,7 +152,6 @@ def ctfs(ctf, route):
     if route == None:
         route = "index"
 
-
     return render_template(f"/ctfs/{ctf}/{route}.html")
 
 if __name__ == "__main__":
