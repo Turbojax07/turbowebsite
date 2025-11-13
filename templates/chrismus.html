@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block header %}{% block title %}Secret Santa 2025{% endblock %}{% endblock %}
+
+{% block head %}
+<link href="/static/css/chrismus.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div id="form_block">
+    <form id="form">
+        <div class="form_question">
+            <label for="group_name">Group Name: </label>
+            <input type="text" id="group_name" name="group_name" />
+        </div>
+
+        <div class="form_question">
+            <label for="group_name">First Name: </label>
+            <input type="text" id="group_name" name="group_name" />
+        </div>
+
+        <div class="form_question">
+            <label for="group_name">Last Name: </label>
+            <input type="text" id="group_name" name="group_name" />
+        </div>
+
+        <div class="form_question">
+            <label for="group_name">Interests (for gift ideas): </label>
+            <input type="text" id="group_name" name="group_name" />
+        </div>
+
+        <div class="form_question">
+            <input type="submit" value="Submit Details">
+        </div>
+    </form>
+</div>
+{% endblock %}

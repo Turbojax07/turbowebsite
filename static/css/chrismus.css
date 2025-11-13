@@ -1,0 +1,23 @@
+#form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.form_question {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.form_question label {
+    margin-right: 3px;
+}
+
+.form_question input[type="submit"] {
+    padding: 3px;
+    font-size: 1em;
+}
