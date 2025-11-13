@@ -1,0 +1,22 @@
+TODO list!
+
+In General
+- Figure out how to remove the scroll bar.  It doesn't need to be everywhere.
+
+CNU Classes
+- Make the list more searchable. (add more options)
+- Figure out a better way of getting the data than collecting it all when the website loads.
+  - Something like a postgres database may help with this.
+- Make filters persist on refresh.
+- Rather than requiring users to refresh the page to update data, maybe try having the data update on a set interval, or add a button for it.
+  - This would mean moving the functionality of the jinja template to a javascript program
+
+CTFS
+- Make a better homepage for the ctf
+
+Resume
+- Make it ATS-compliant or whatever
+
+Main Page:
+- Remove some of the photos and maybe add actual information to it.
+
