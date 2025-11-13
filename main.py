@@ -22,7 +22,7 @@ def safe_render_template(template: str, **context: typing.Any) -> str:
     try:
         return env.get_template(template).render(context)
     except Exception:
-        return render_template("404.html")
+        return render_template("404.html"), 404
     
 def safe_strip(value: str | None) -> str:
     if isinstance(value, str):
@@ -77,13 +77,14 @@ def swift_tickets(ticket):
         return render_template(f"/swiftstuff/tickets/{ticket}")
     return render_template(f"/swiftstuff/tickets/{ticket}.html")
 
+@app.route('/files')
+@app.route('/files/')
 @app.route('/files/<path:subpath>')
-def list_directory(subpath=''):
-    base_dir = '/mnt/drive1/uploads'
-    abs_path = os.path.join(base_dir, subpath)
+def list_directory(subpath=""):
+    abs_path = os.path.join('/mnt/drive1/files', subpath)
 
     if not os.path.exists(abs_path):
-        return "File not found", 404
+        return render_template("404.html"), 404
 
     if os.path.isfile(abs_path):
         # If it's a file, serve it for download
